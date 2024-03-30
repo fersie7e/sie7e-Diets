@@ -8,7 +8,7 @@ from django.urls import reverse
 def index(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("login"))
-    return render(request, "users/index.html")
+    return HttpResponseRedirect(reverse("index",  args=(1,)) )
 
 def login_view(request):
     if request.method == "POST":
@@ -19,7 +19,7 @@ def login_view(request):
 
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse("index"))
+            return HttpResponseRedirect(reverse("index", args=(1,)))
         else:
             return render(request, "users/login.html")
     else:

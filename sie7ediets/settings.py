@@ -10,10 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
 from pathlib import Path
+from django.conf import settings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -38,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    'diets',
+    'rest_framework',
+
 ]
 
 MIDDLEWARE = [
@@ -67,6 +73,8 @@ TEMPLATES = [
         },
     },
 ]
+
+PWA_SERVICE_WORKER_PATH = 'static/js/serviceworker.js'
 
 WSGI_APPLICATION = 'sie7ediets.wsgi.application'
 
@@ -118,7 +126,17 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
+
+
+#PWA_SERVICE_WORKER_PATH = 'static/js/serviceworker.js'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+

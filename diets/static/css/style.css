@@ -1,0 +1,16 @@
+
+.bg-color1{
+    background-color: rgba(153, 102, 255, 0.2)!important;
+}
+
+.bg-color2{
+    background-color: #E7008A !important;
+}
+
+.dl-horizontal {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+}
+
